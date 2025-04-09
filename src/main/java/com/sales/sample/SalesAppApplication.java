@@ -27,12 +27,12 @@ public class SalesAppApplication {
 	}
 
 	@PostConstruct
-	public void checkDatabaseConnection() {
-		try (Connection conn = dataSource.getConnection()) {
-			log.info("Database connection established successfully!");
-		} catch (Exception e) {
-			log.error("Failed to connect to database", e);
-		}
-	}
-
+    public void checkDatabaseConnection() {
+        try (Connection conn = dataSource.getConnection()) {
+            log.info("Database connection established successfully!");
+        } catch (Exception e) {
+            log.error("Failed to connect to database", e);
+            throw new RuntimeException("Database connection failed", e);
+        }
+    }
 }
