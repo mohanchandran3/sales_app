@@ -26,4 +26,4 @@ salesapp:
     file-path: classpath:sales_data.csv
 app:
   data:
-    file-path: classpath:sales_data.csv  # Add this if needed
+    file-path: classpath:sales_data.csv 
